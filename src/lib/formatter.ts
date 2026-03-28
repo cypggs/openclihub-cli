@@ -6,6 +6,7 @@ export function formatToolTable(tools: CliTool[]): string {
   const table = new Table({
     head: [
       chalk.bold("Name"),
+      chalk.bold("Slug"),
       chalk.bold("Type"),
       chalk.bold("Category"),
       chalk.bold("Language"),
@@ -21,6 +22,7 @@ export function formatToolTable(tools: CliTool[]): string {
         : chalk.blue("community");
     table.push([
       chalk.white.bold(t.name),
+      chalk.dim(t.slug),
       badge,
       t.category || "-",
       t.primary_language || "-",
